@@ -200,6 +200,7 @@ app.post("/api/reminders/notify", async (req, res) => {
         subject: "Medication Reminder",
         text: message,
       };
+      console.log({ reminderDetails, caregiver });
 
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
