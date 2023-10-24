@@ -168,13 +168,11 @@ app.delete("/api/reminders/:id", async (req, res) => {
 
 // create transporter
 const transporter = nodemailer.createTransport({
-  port: 465,
-  host: "smtp.gmail.com",
+  service: "gmail",
   auth: {
     user: process.env.SENDER_EMAIL,
     pass: process.env.APP_PASSWORD,
   },
-  secure: true,
 });
 
 // send notification
